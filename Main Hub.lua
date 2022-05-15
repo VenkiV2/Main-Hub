@@ -15062,15 +15062,15 @@ end
 
 
 
-local Tab = Window:NewTab("Make Your Own")
-local MakeSection = Tab:NewSection("Make your own scripts with these tools")
-MakeSection:NewButton("Dark Dex", "Dark Dex Script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+local Tab = Window:NewTab("Utility scripts")
+local UtilSection = Tab:NewSection("Utility scripts")
+UtilSection:NewButton("Infinite Yeild", "Infinite Yeild", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
-MakeSection:NewButton("Simple Spy", "Simple Spy Script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Make-Own-Scripts/main/Simple%20Spy", true))()
+
+UtilSection:NewButton("CMD X", "CMD X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 end)
-    
 
 
 
