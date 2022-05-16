@@ -28,6 +28,9 @@ local Window = Library.CreateLib("Main Hub " .. Version, "DarkTheme")
 local Tab = Window:NewTab("Main")
 local MainSection = Tab:NewSection("Welcome, >" .. game.Players.LocalPlayer.Name .. "< to Main Hub")
 
+MainSection:NewButton("ButtonText", "ButtonInfo", function()
+    print("Clicked")
+end)
 
 
 MainSection:NewSlider("Walk Speed", "Walk Speed for humanoid", 500, 16, function(v) -- 500 (MaxValue) | 0 (MinValue)
