@@ -553,7 +553,7 @@ MainSection:NewButton("Copy CFrame", "Copyes CFrame to clipboard", function()
     CoreGui:SetCore("SendNotification", {
         -- Customizable
         Title = "CFrame",
-        Text = "Player CFrame set to clipboard",
+        Text = "Player CFrame set to clipboard "..plc,
         Duration = 5, -- Set the duration to how much you want this to stay
         -- More code in part 2
     })
