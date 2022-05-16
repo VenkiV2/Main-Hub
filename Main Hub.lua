@@ -1,4 +1,5 @@
 --[Git Hub Loadstring]-- loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub/main/Main%20Hub.lua"))()
+--[Obfuscated Loadstring] loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub-Obfuscated/main/Protected%20(3).lua"))()
 
 
 
