@@ -15321,6 +15321,12 @@ UtilSection:NewButton("Box/Health ESP", "ESP", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Cornyllius/ESPs/main/2D%20Box%20ESP/ESP%20%2B%20Health%20Bars.lua"))()
 end)
 
+UtilSection:NewButton("Music Player(Client Sided)", "Music Player(Client Sided)", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/m5hVkvnM", true))()
+end)
+
+
+
 
 
 
