@@ -531,8 +531,8 @@ MainSection:NewTextBox("TP to CFrame", "Teleports to the CFrame chosen", functio
     
     wait()
     
-    local player = plrs(CFrameChosen
-        )    local tweenInfo = TweenInfo.new(5) --2 sec
+    local player = plrs(CFrameChosen)
+        local tweenInfo = TweenInfo.new(5) --2 sec
     
     local t = ts:Create(player.Character.PrimaryPart, tweenInfo, {CFrame = CFrame.new(0,50,50)})
     player.Character.PrimaryPart.Anchored = true --Anchor the player's rootpart so physics doesn't mess things up.
@@ -15166,8 +15166,15 @@ end)
 
 
 
-local Tab = Window:NewTab("UI Modification")
-    local StyleSection = Tab:NewSection("Changes UI")
+local Tab = Window:NewTab("Options")
+    local SpSection = Tab:NewSection("Suported Games")
+    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa"}, function(currentOption)
+        print(currentOption)
+    end)
+    
+    
+
+    local StyleSection = Tab:NewSection("Change UI")
     
     StyleSection:NewKeybind("Hide gui", "You can set a keybind to hide the gui here", Enum.KeyCode.RightAlt, function()
         Library:ToggleUI()
@@ -15178,6 +15185,10 @@ local Tab = Window:NewTab("UI Modification")
         -- Second argument is the default color
     end)
 
+    
+    
+    
+    
     local Tab = Window:NewTab("Credits")
     local CreditsSection = Tab:NewSection("Credits")
     
