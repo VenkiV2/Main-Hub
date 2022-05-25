@@ -12,6 +12,14 @@ local DiscordProfile = "Nino The Christmas Tree#3952"
 local GitHubProfile = "https://github.com/VenkiV2"
 
 
+local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "Loading...",
+    Text = "Loading Script...",
+    Duration = 5, -- Set the duration to how much you want this to stay
+    -- More code in part 2
+})
 
 wait(2)
 local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
