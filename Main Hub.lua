@@ -7,7 +7,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 local Version = "0.0.1"
 
-local DiscordServer = "https://discord.gg/ZEfQZzDDFy"
+local DiscordServer = "https://discord.gg/PWJ4cguJDb"
 local DiscordProfile = "Nino The Christmas Tree#3952"
 local GitHubProfile = "https://github.com/VenkiV2"
 
