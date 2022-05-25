@@ -15149,7 +15149,7 @@ end
         local Tab = Window:NewTab("Shindo Life")
         local ShindoSection = Tab:NewSection("Shindo Life")
         ShindoSection:NewButton("Solaris Hub(Shindo Life)", "Solaris Hub(Shindo Life)", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/AUBKuKUe"))()
+            loadstring(game:HttpGet('https://solarishub.dev/script.lua',true))()
         end)
     end
 
