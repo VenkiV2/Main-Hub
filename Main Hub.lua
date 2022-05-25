@@ -15145,6 +15145,15 @@ end
         end)
     end
 
+    if game.PlaceId == 4616652839 then
+        local Tab = Window:NewTab("Shindo Life")
+        local ShindoSection = Tab:NewSection("Shindo Life")
+        ShindoSection:NewButton("Solaris Hub(Shindo Life)", "Solaris Hub(Shindo Life)", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/AUBKuKUe"))()
+        end)
+    end
+
+
 
 
 
@@ -15317,7 +15326,7 @@ end)
 
 local Tab = Window:NewTab("Options")
     local SpSection = Tab:NewSection("Suported Games")
-    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa"}, function(currentOption)
+    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life"}, function(currentOption)
         print(currentOption)
     end)
     
