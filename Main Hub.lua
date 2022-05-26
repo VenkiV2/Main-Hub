@@ -3666,7 +3666,7 @@ FeSection:NewButton("R6 Fling[G]", "R6 Fling", function()
 end)
 
     FeSection:NewButton("R15 Fling", "R15 Fling", function()
-        power = 350 -- change this to make it more or less powerful
+        power = 9000 -- change this to make it more or less powerful
 
 game:GetService('RunService').Stepped:connect(function()
 game.Players.LocalPlayer.Character.Head.CanCollide = false
@@ -15332,7 +15332,7 @@ end)
 
 local Tab = Window:NewTab("Options")
     local SpSection = Tab:NewSection("Suported Games")
-    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life"}, function(currentOption)
+    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life", "Wisteria", "Business Legends"}, function(currentOption)
         print(currentOption)
     end)
     
