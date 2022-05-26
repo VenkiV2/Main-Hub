@@ -15393,8 +15393,7 @@ local Tab = Window:NewTab("Options")
 })
     end)
 
-    CreditsSection:NewLabel("I AM NOT RESPONSIBLE FOR")
-    CreditsSection:NewLabel("PERMA-BANS OR KICKS")
+    CreditsSection:NewLabel("Note: I am not responsible for bans")
 
 
 
