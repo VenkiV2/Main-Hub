@@ -15364,19 +15364,21 @@ end)
     
     local Tab = Window:NewTab("Options")
     local FPSUSection = Tab:NewSection("FPS Stuff")
-    FPSUSection:NewButton("Unlock FPS", "Unlocks your fps", function()
+    
+    FPSUSection:NewToggle("Unlock FPS", "Unlock your fps", function(state)
+        if state then
         local UserInputService = game:GetService("UserInputService")
         local RunService = game:GetService("RunService")
     
         RunService:Set3dRenderingEnabled(true)
         setfpscap(500)
-
-    local Initialize = function()
-	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
-	UserInputService.WindowFocused:Connect(WindowFocusedFunction)
-	return
-    end
-    Initialize()
+        else
+        local UserInputService = game:GetService("UserInputService")
+        local RunService = game:GetService("RunService")
+    
+        RunService:Set3dRenderingEnabled(true)
+        setfpscap(60)
+        end
     end)
 
     FPSUSection:NewButton("Boost FPS", "Removes all textures", function()
