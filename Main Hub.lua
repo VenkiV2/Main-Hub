@@ -7,6 +7,8 @@ if not game:IsLoaded() then
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
 
 local Version = "0.0.1"
 
@@ -15,24 +17,18 @@ local DiscordProfile = "Nino The Christmas Tree#3952"
 local GitHubProfile = "https://github.com/VenkiV2"
 
 
-local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Loading...",
-    Text = "Loading Script...",
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+
+local notif = Notification.new("info", "Loading", "Loading...")
+notif:changeHeading("Loading")
+notif:changeBody("Loading...")
+notif:deleteTimeout(2)
 
 wait(2)
-local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-    CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Succes",
-    Text = "Succsesfully Loaded MainHub ".. Version,
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+local notif = Notification.new("success", "Success", "Succsesfully Loaded MainHub ".. Version)
+notif:changeHeading("Success")
+notif:changeBody("Succsesfully Loaded MainHub ".. Version)
+notif:deleteTimeout(2)
+
 
 
 local Window = Library.CreateLib("Main Hub " .. Version, "DarkTheme")
@@ -15320,6 +15316,11 @@ UtilSection:NewButton("Chat Logger", "Shows a gui with the chat", function()
         LogPlr(plr)
     end)
 end)
+
+UtilSection:NewButton("Owl Hub", "Owl Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))()
+end)
+
 UtilSection:NewButton("Box/Health ESP", "ESP", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Cornyllius/ESPs/main/2D%20Box%20ESP/ESP%20%2B%20Health%20Bars.lua"))()
 end)
@@ -15362,57 +15363,40 @@ local Tab = Window:NewTab("Options")
     CreditsSection:NewButton("Copy Discord Profile", (DiscordProfile), function()
         setclipboard(DiscordProfile)
         
-        local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-    CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Discord profile to clipboard",
-    Text = (DiscordProfile),
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+        local notif = Notification.new("success", "success", "Success body message.")
+        notif:changeHeading("Discord Profile copied to clipboard")
+        notif:changeBody(DiscordProfile)
+        notif:deleteTimeout(3)
     end)
     CreditsSection:NewButton("Discord Server to clipboard", (DiscordServer), function()
         setclipboard(DiscordServer)
-        
-        local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-    CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Discord Server to clipboard",
-    Text = (DiscordServer),
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+
+    local notif = Notification.new("success", "success", "Success body message.")
+    notif:changeHeading("Discord Server copied to clipboard")
+    notif:changeBody(DiscordServer)
+    notif:deleteTimeout(3)
     end)
     CreditsSection:NewButton("Copy Git Hub", (GitHubProfile), function()
         setclipboard(GitHubProfile)
         
-        local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-    CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Git Hub to clipboard",
-    Text = (GitHubProfile),
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+    local notif = Notification.new("success", "success", "Success body message.")
+    notif:changeHeading("Git Hub profile copied to clipboard")
+    notif:changeBody(GitHubProfile)
+    notif:deleteTimeout(3)
     end)
 
     CreditsSection:NewLabel("Note: I am not responsible for bans")
 
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/RBX-Script-Catcher/main/Protected%20(2).lua"))()
-
-
 wait(5)
 setclipboard(DiscordServer)
-local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-    CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "Discord Server to clipboard",
-    Text = (DiscordServer),
-    Duration = 5, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+
+local notif = Notification.new("success", "success", "Success body message.")
+notif:changeHeading("Discord Server copied to clipboard")
+notif:changeBody(DiscordServer)
+notif:deleteTimeout(3)
+
 
 
 
