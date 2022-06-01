@@ -5,7 +5,7 @@ local colors = {
     SchemeColor = Color3.fromRGB(64, 64, 64),
     Background = Color3.fromRGB(0, 0, 0),
     Header = Color3.fromRGB(0, 0, 0),
-    TextColor = Color3.fromRGB(255,140,0),
+    TextColor = Color3.fromRGB(255,69,0),
     ElementColor = Color3.fromRGB(20, 20, 20)
 }
 
@@ -15368,17 +15368,10 @@ end)
         local UserInputService = game:GetService("UserInputService")
     local RunService = game:GetService("RunService")
 
-    local WindowFocusReleasedFunction = function()
-	RunService:Set3dRenderingEnabled(false)
-	setfpscap(60)
-	return
-    end
-
-    local WindowFocusedFunction = function()
-	RunService:Set3dRenderingEnabled(true)
+    RunService:Set3dRenderingEnabled(true)
 	setfpscap(500)
 	return
-    end
+
 
     local Initialize = function()
 	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
