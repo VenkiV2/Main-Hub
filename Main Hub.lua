@@ -1,7 +1,10 @@
 --[Git Hub Loadstring]-- loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub/main/Main%20Hub.lua"))()
 --[Obfuscated Loadstring]-- loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub-Obfuscated/main/Protected%20(3).lua"))()
 
-
+-- init
+if not game:IsLoaded() then 
+    game.Loaded:Wait()
+end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
