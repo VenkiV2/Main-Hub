@@ -1,10 +1,20 @@
 --[Git Hub Loadstring]-- loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub/main/Main%20Hub.lua"))()
 --[Obfuscated Loadstring]-- loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/Main-Hub-Obfuscated/main/Protected%20(3).lua"))()
 
+local colors = {
+    SchemeColor = Color3.fromRGB(64, 64, 64),
+    Background = Color3.fromRGB(0, 0, 0),
+    Header = Color3.fromRGB(0, 0, 0),
+    TextColor = Color3.fromRGB(255,140,0),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+
 -- init
 if not game:IsLoaded() then 
     game.Loaded:Wait()
 end
+
+
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
@@ -30,8 +40,7 @@ notif:changeBody("Succsesfully Loaded MainHub ".. Version)
 notif:deleteTimeout(2)
 
 
-
-local Window = Library.CreateLib("Main Hub " .. Version, "DarkTheme")
+local Window = Library.CreateLib("Main Hub " .. Version, colors)
 local Tab = Window:NewTab("Main")
 local MainSection = Tab:NewSection("Welcome, >" .. game.Players.LocalPlayer.Name .. "< to Main Hub")
 
@@ -15322,7 +15331,7 @@ UtilSection:NewButton("Owl Hub", "Owl Hub", function()
 end)
 
 UtilSection:NewButton("Box/Health ESP", "ESP", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Cornyllius/ESPs/main/2D%20Box%20ESP/ESP%20%2B%20Health%20Bars.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/ESP/main/ESP"))()
 end)
 
 UtilSection:NewButton("Music Player(Client Sided)", "Music Player(Client Sided)", function()
@@ -15333,21 +15342,16 @@ end)
 
 
 
-
-local Tab = Window:NewTab("Options")
-    local SpSection = Tab:NewSection("Suported Games")
-    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life", "Wisteria", "Business Legends"}, function(currentOption)
-        print(currentOption)
-    end)
     
     
-
+    local Tab = Window:NewTab("Interface")
     local StyleSection = Tab:NewSection("Change UI")
     
     StyleSection:NewKeybind("Hide gui", "You can set a keybind to hide the gui here", Enum.KeyCode.RightAlt, function()
         Library:ToggleUI()
     end)
-    
+
+
     StyleSection:NewColorPicker("Color Text", "Color Info", Color3.fromRGB(0,0,0), function(color)
         print(color)
         -- Second argument is the default color
@@ -15357,13 +15361,18 @@ local Tab = Window:NewTab("Options")
     
     
     
-    local Tab = Window:NewTab("Credits")
-    local CreditsSection = Tab:NewSection("Credits")
+    local Tab = Window:NewTab("Info")
+    local SpSection = Tab:NewSection("Suported Games")
+    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life", "Wisteria", "Business Legends"}, function(currentOption)
+        print(currentOption)
+    end)
+
     
+    local CreditsSection = Tab:NewSection("Credits")
     CreditsSection:NewButton("Copy Discord Profile", (DiscordProfile), function()
         setclipboard(DiscordProfile)
         
-        local notif = Notification.new("success", "success", "Success body message.")
+        local notif = Notification.new("info", "success", "Success body message.")
         notif:changeHeading("Discord Profile copied to clipboard")
         notif:changeBody(DiscordProfile)
         notif:deleteTimeout(3)
@@ -15371,7 +15380,7 @@ local Tab = Window:NewTab("Options")
     CreditsSection:NewButton("Discord Server to clipboard", (DiscordServer), function()
         setclipboard(DiscordServer)
 
-    local notif = Notification.new("success", "success", "Success body message.")
+    local notif = Notification.new("info", "success", "Success body message.")
     notif:changeHeading("Discord Server copied to clipboard")
     notif:changeBody(DiscordServer)
     notif:deleteTimeout(3)
@@ -15379,7 +15388,7 @@ local Tab = Window:NewTab("Options")
     CreditsSection:NewButton("Copy Git Hub", (GitHubProfile), function()
         setclipboard(GitHubProfile)
         
-    local notif = Notification.new("success", "success", "Success body message.")
+    local notif = Notification.new("info", "success", "Success body message.")
     notif:changeHeading("Git Hub profile copied to clipboard")
     notif:changeBody(GitHubProfile)
     notif:deleteTimeout(3)
@@ -15392,7 +15401,7 @@ local Tab = Window:NewTab("Options")
 wait(5)
 setclipboard(DiscordServer)
 
-local notif = Notification.new("success", "success", "Success body message.")
+local notif = Notification.new("info", "success", "Success body message.")
 notif:changeHeading("Discord Server copied to clipboard")
 notif:changeBody(DiscordServer)
 notif:deleteTimeout(3)
