@@ -15385,7 +15385,7 @@ end)
     loadstring(game:HttpGet("https://pastebin.com/raw/ywFjby1i"))()
     end)
     
-    local StyleSection = Tab:NewSection("Change UI")
+    local StyleSection = Tab:NewSection("Interface")
     
     StyleSection:NewKeybind("Hide gui", "You can set a keybind to hide the gui here", Enum.KeyCode.RightAlt, function()
         Library:ToggleUI()
