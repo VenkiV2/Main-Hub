@@ -15441,6 +15441,10 @@ end)
     notif:deleteTimeout(3)
     end)
 
+    CreditsSection:NewButton("Change Log (Copy to browser)", "Change Log", function()
+        setclipboard(DiscordServer)
+    end)
+
     CreditsSection:NewLabel("Note: I am not responsible for bans")
 
 
