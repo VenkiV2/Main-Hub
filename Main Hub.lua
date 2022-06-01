@@ -22,7 +22,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 
 
-local Version = "0.0.1"
+local Version = "0.0.2"
 
 local DiscordServer = "https://discord.gg/PWJ4cguJDb"
 local DiscordProfile = "Nino The Christmas Tree#3952"
