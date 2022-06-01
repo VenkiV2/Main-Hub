@@ -16,6 +16,8 @@ end
 
 
 
+
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 
@@ -25,6 +27,8 @@ local Version = "0.0.1"
 local DiscordServer = "https://discord.gg/PWJ4cguJDb"
 local DiscordProfile = "Nino The Christmas Tree#3952"
 local GitHubProfile = "https://github.com/VenkiV2"
+
+setclipboard(DiscordServer)
 
 
 
@@ -38,6 +42,7 @@ local notif = Notification.new("success", "Success", "Succsesfully Loaded MainHu
 notif:changeHeading("Success")
 notif:changeBody("Succsesfully Loaded MainHub ".. Version)
 notif:deleteTimeout(2)
+
 
 
 local Window = Library.CreateLib("Main Hub " .. Version, colors)
@@ -15161,6 +15166,19 @@ end
         end)
     end
 
+    if game.PlaceId == 6447798030 then
+        local Tab = Window:NewTab("Funky Friday")
+        local FunkyFSection = Tab:NewSection("Auto Player")
+        FunkyFSection:NewButton("Auto Player", "Auto Player gui", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+            
+            local notif = Notification.new("success", "Loaded", "Successfully loaded script")
+        notif:changeHeading("Loaded")
+        notif:changeBody("Successfully loaded script")
+        notif:deleteTimeout(3)
+        end)
+    end
+
 
 
 
@@ -15334,7 +15352,7 @@ UtilSection:NewButton("Box/Health ESP", "ESP", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VenkiV2/ESP/main/ESP"))()
 end)
 
-UtilSection:NewButton("Music Player(Client Sided)", "Music Player(Client Sided)", function()
+UtilSection:NewButton("Music Player (Client Sided)", "Music Player(Client Sided)", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/m5hVkvnM", true))()
 end)
 
@@ -15344,7 +15362,36 @@ end)
 
     
     
-    local Tab = Window:NewTab("Interface")
+    local Tab = Window:NewTab("Options")
+    local FPSUSection = Tab:NewSection("FPS Stuff")
+    FPSUSection:NewButton("Unlock FPS", "Unlocks your fps", function()
+        local UserInputService = game:GetService("UserInputService")
+    local RunService = game:GetService("RunService")
+
+    local WindowFocusReleasedFunction = function()
+	RunService:Set3dRenderingEnabled(false)
+	setfpscap(60)
+	return
+    end
+
+    local WindowFocusedFunction = function()
+	RunService:Set3dRenderingEnabled(true)
+	setfpscap(500)
+	return
+    end
+
+    local Initialize = function()
+	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
+	UserInputService.WindowFocused:Connect(WindowFocusedFunction)
+	return
+    end
+    Initialize()
+    end)
+
+    FPSUSection:NewButton("Boost FPS", "Removes all textures", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ywFjby1i"))()
+    end)
+    
     local StyleSection = Tab:NewSection("Change UI")
     
     StyleSection:NewKeybind("Hide gui", "You can set a keybind to hide the gui here", Enum.KeyCode.RightAlt, function()
@@ -15363,7 +15410,7 @@ end)
     
     local Tab = Window:NewTab("Info")
     local SpSection = Tab:NewSection("Suported Games")
-    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life", "Wisteria", "Business Legends"}, function(currentOption)
+    SpSection:NewDropdown("Suported Games", "Suported Games", {"Your Bizzare Adventure", "Deepwoken", "SCP-3008", "Build a boat", "Starving Artists", "The Wild West", "Mad City", "Da Hood", "Jailbreak", "Demon Slayer RPG 2", "South London 2", "Blox Fruits", "Phantom Forces", "Knife Ability Test", "Raise a floppa", "Shindo Life", "Wisteria", "Business Legends", "Funky Friday"}, function(currentOption)
         print(currentOption)
     end)
 
@@ -15395,16 +15442,6 @@ end)
     end)
 
     CreditsSection:NewLabel("Note: I am not responsible for bans")
-
-
-
-wait(5)
-setclipboard(DiscordServer)
-
-local notif = Notification.new("info", "success", "Success body message.")
-notif:changeHeading("Discord Server copied to clipboard")
-notif:changeBody(DiscordServer)
-notif:deleteTimeout(3)
 
 
 
