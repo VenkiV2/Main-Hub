@@ -15366,12 +15366,10 @@ end)
     local FPSUSection = Tab:NewSection("FPS Stuff")
     FPSUSection:NewButton("Unlock FPS", "Unlocks your fps", function()
         local UserInputService = game:GetService("UserInputService")
-    local RunService = game:GetService("RunService")
-
-    RunService:Set3dRenderingEnabled(true)
-	setfpscap(500)
-	return
-
+        local RunService = game:GetService("RunService")
+    
+        RunService:Set3dRenderingEnabled(true)
+        setfpscap(500)
 
     local Initialize = function()
 	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
