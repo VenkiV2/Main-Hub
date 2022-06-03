@@ -509,17 +509,16 @@ end)
 MainSection:NewToggle("Infinite Jump", "Inf jump", function(state)
     if state then
         InfiniteJumpEnabled = true
-        while InfiniteJumpEnabled == true do
-            wait()
+        wait()
     game:GetService("UserInputService").JumpRequest:connect(function()
 	if InfiniteJumpEnabled then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
-end
     else
         InfiniteJumpEnabled = false
-end)
+    end
+    end)
 
 MainSection:NewTextBox("TP to Player", "Teleports to the player chosen", function(PlayerChosen)
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
