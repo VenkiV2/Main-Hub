@@ -62,24 +62,7 @@ MainSection:NewSlider("Jump Power", "Jump Power for humanoid", 500, 50, function
 end)
 
 
-MainSection:NewButton("Noclip[Q]", "Q to noclip", function()
-    local StealthMode = true -- If game has an anticheat that checks the logs
-
-local Indicator
-
-if not StealthMode then
-    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
-    Indicator = Instance.new("TextLabel", ScreenGui)
-    Indicator.AnchorPoint = Vector2.new(0, 1)
-    Indicator.Position = UDim2.new(0, 0, 1, 0)
-    Indicator.Size = UDim2.new(0, 200, 0, 50)
-    Indicator.BackgroundTransparency = 1
-    Indicator.TextScaled = true
-    Indicator.TextStrokeTransparency = 0
-    Indicator.TextColor3 = Color3.new(0, 0, 0)
-    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
-    Indicator.Text = "Noclip: Enabled"
-end
+MainSection:NewButton("Noclip[N]", "N to noclip", function()
 
 local noclip = false -- original
 local player = game.Players.LocalPlayer
@@ -88,7 +71,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 local mouse = player:GetMouse()
 
 mouse.KeyDown:Connect(function(key)
-    if key == "q" then
+    if key == "n" then
         noclip = not noclip
 
         if not StealthMode then
@@ -506,19 +489,6 @@ game:GetService("UserInputService").InputBegan:Connect(
 )
 end)
 
-MainSection:NewToggle("Infinite Jump", "Inf jump", function(state)
-    if state then
-        InfiniteJumpEnabled = true
-        wait()
-    game:GetService("UserInputService").JumpRequest:connect(function()
-	if InfiniteJumpEnabled then
-		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-	end
-end)
-    else
-        InfiniteJumpEnabled = false
-    end
-    end)
 
 MainSection:NewTextBox("TP to Player", "Teleports to the player chosen", function(PlayerChosen)
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
